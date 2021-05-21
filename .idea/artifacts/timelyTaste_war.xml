@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="timelyTaste:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>timelyTaste</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="timelyTaste-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="timelyTaste:war exploded" />
+    </root>
+  </artifact>
+</component>
