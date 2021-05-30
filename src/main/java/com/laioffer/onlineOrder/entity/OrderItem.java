@@ -1,10 +1,13 @@
-package com.jlm.timelyTaste.entity;
+package com.laioffer.onlineOrder.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "orderitem")
-public class OrderItem {
+public class OrderItem implements Serializable {
 
     private static final long serialVersionUID = -2455760938054036364L;
 
@@ -15,6 +18,13 @@ public class OrderItem {
     private int quantity;
 
     private double price;
+
+    @ManyToOne
+    private MenuItem menuItem;
+
+    @ManyToOne
+    @JsonIgnore
+    private Cart cart;
 
     public int getId() {
         return id;
@@ -38,5 +48,21 @@ public class OrderItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public MenuItem getMenuItem() {
+        return menuItem;
+    }
+
+    public void setMenuItem(MenuItem menuItem) {
+        this.menuItem = menuItem;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
